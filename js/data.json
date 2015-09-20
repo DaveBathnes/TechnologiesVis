@@ -1,124 +1,127 @@
 {
-    "adopt": {
-        "spark": {
-            "rank": "25",
-            "name": "Apache Spark",
-            "description": "Apache Spark has been steadily gaining ground as a fast and general engine for large-scale data processing. The engine is written in Scala and is well suited for applications that reuse a working set of data across multiple parallel operations. It�s designed to work as a standalone cluster or as part of Hadoop YARN cluster. It can access data from sources such as HDFS, Cassandra, S3 etc. Spark also offers many higher level operators in order to ease the development of data parallel applications. As a generic data processing platform it has enabled development of many higher level tools such as interactive SQL (Spark SQL), real time streaming (Spark Streaming), machine learning library (MLib), R-on-Spark etc.",
-            "links": { "Apache Spark": "https://spark.apache.org/" }
-        }
-    },
-    "trial": {
-        "impala": {
-            "rank": "26",
-            "name": "Cloudera Impala",
-            "description": "For a while now the Hadoop community has been trying to bring low-latency, interactive SQL capability to the Hadoop platform (better known as SQL-on-Hadoop). This has led to a few open source systems such as Cloudera Impala, Apache Drill, Facebook�s Presto etc being developed actively through 2014. We think the SQL-on-Hadoop trend signals an important shift as it changes Hadoop's proposition from being a batch oriented technology that was complementary to databases into something that could compete with them. <a href='http://www.cloudera.com/content/cloudera/en/products-and-services/cdh/impala.html'><strong>Cloudera Impala</strong></a> was one of the first SQL-on-Hadoop platforms. It is a distributed, massively-parallel, C++ based query engine. The core component of this platform is the Impala daemon that coordinates the execution of the SQL query across one or more nodes of the Impala cluster. Impala is designed to read data from files stored on HDFS in all popular file formats. It leverages Hive's metadata catalog, in order to share databases and tables between the two database platforms. Impala comes with a shell as well as JDBC and ODBC drivers for applications to use.",
-            "links": { "Cloudera Impala": "http://www.cloudera.com/content/cloudera/en/products-and-services/cdh/impala.html" },
-            "flag": "new"
-        },
-        "digitalocean": {
-            "rank": "27",
-            "name": "DigitalOcean",
-            "description": "We have been using DigitalOcean for basic compute infrastructure, and the service continues to impress us. If you need developer-friendly cloud infrastructure, it is worth a look",
-            "links": { "DigitalOcean": "http://digitalocean.com" }
-        },
-        "TOTPTwo-FactorAuthentication": {
-            "rank": "28",
-            "name": "TOTP Two-Factor Authentication",
-            "description": "Passwords continue to be a poor mechanism for authenticating users and we�ve recently seen companies such as Yahoo! move to a �no passwords� solution�a one-time code is texted to your phone whenever you need to log in from a new browser. If you are still using passwords we recommend employing two-factor authentication which can significantly improve security. Time-based One-Time Password (TOTP) is the standard algorithm in this space, with free smartphone authenticator apps from Google and Microsoft.",
-            "links": {
-                "Time-based One-Time Password (TOTP)": "http://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm",
-                "Google": "https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2",
-                "Microsoft": "http://www.windowsphone.com/en-us/store/app/authenticator/e7994dbc-2336-4950-91ba-ca22d653759b"
-            }
-        }
-    },
-    "assess": {
-        "kylin": {
-            "rank": "29",
-            "name": "Apache Kylin",
-            "description": "Apache Kylin is an open source analytics solution from eBay Inc. that enables SQL based multidimensional analysis (OLAP) on very large datasets. Kylin is intended to be a Hadoop based hybrid OLAP (HOLAP) solution that will eventually support both MOLAP and ROLAP style multidimensional analysis. With Kylin you can define cubes using a Cube Designer and initiate an offline process that builds these cubes. The offline process performs a pre-join step to join facts and dimension tables into a flattened out structure. This is followed by a pre-aggregation phase where individual cuboids are built using Map Reduce jobs. The results are stored in HDFS sequence files and are later loaded into HBase. The data requests can originate from SQL submitted using a SQL-based tool. The query engine (based on Apache Calcite), determines if the target dataset exists in HBase. If so, the engine directly accesses the target data from HBase and returns the result with sub-second latency. If not, the engine routes the queries to Hive (or any other SQL on Hadoop solution enabled on the cluster).",
-            "links": { "Apache Kylin": "http://www.kylin.io/" },
-            "flag": "new"
-        },
-        "mesos": {
-            "rank": "30",
-            "name": "Apache Mesos",
-            "description": "Mesos is a platform that abstracts out underlying computing resources to make it easier to build massively scalable distributed systems. It can be used to provide a scheduling layer for Docker, or to act as an abstraction layer to things like AWS. Twitter has used it to great effect to help them scale their infrastructure. Tools build on top of Mesos are starting to appear such as Chronos, which is a distributed, fault tolerant cron replacement.",
-            "links": { "Apache Mesos": "http://mesos.apache.org/" }
-        },
-        "CoreCLRandFX": {
-            "rank": "31",
-            "name": "CoreCLR and CoreFX",
-            "description": "CoreCLR and CoreFX is the core platform and framework for .NET. Although not new, they have recently been open sourced by Microsoft. A key change is that these dependencies are bin-deployable, they do not need to be installed on a machine in advance. This eases side-by-side deployments, allowing applications to use different framework versions without conflicts. Something written in .NET is then an implementation detail, you can install a .NET dependency into any environment. A .NET tool is no different than something written in C from an external dependency perspective, making it a much more attractive option for general purpose applications and utilities. CoreFX is also being factored into individual NuGet dependencies, so that applications can pull what they need, keeping the footprint for .NET applications and libraries small and making it easier to replace part of the framework.",
-            "links": { "CoreCLR": "https://github.com/dotnet/corefx", "CoreFX": "https://github.com/dotnet/corefx" },
-            "flag": "new"
-        },
-        "CoreOS": {
-            "rank": "32",
-            "name": "CoreOS",
-            "description": "CoreOS is a Linux distribution designed to run large, scalable systems. All applications deployed on a CoreOS instance are run in separate Docker containers, and CoreOS provides a suite of tools to help manage them, including etcd their own distributed configuration store. Newer services, such as fleet, help cluster management by ensuring that a specific number of service instances are always kept running. FastPatch allows atomic CoreOS upgrades using an active-passive root partition scheme and helps with quick rollback in case of problems. These new developments make CoreOS well worth looking into if you are already comfortable with Docker."
-        },
-        "Deis": {
-            "rank": "33",
-            "name": "Deis",
-            "description": "Heroku, with its 12-factor application model, has changed the way we think about building, deploying, and hosting web applications. Deis encapsulates the Heroku PaaS model in an open-source framework that deploys onto Docker containers hosted anywhere. Deis is still evolving, but for applications that fit the 12-factor model it has the potential to greatly simplify deployment and hosting in the environment of your choice. Deis is yet another example of the rich ecosystem of platforms and tools emerging around Docker.",
-            "links": { "Deis": "http://deis.io/" },
-            "flag": "new"
-        },
-        "H20": {
-            "rank": "34",
-            "name": "H20",
-            "description": "Predictive analytics are used in more and more products, often directly in end-user facing functionality. H2O is an interesting new open source package (with a startup behind it) that makes predictive analytics accessible to project teams due to its easy-to-use user interface. At the same time it integrates with the data scientists� favourite tools, R and Python, as well as Hadoop and Spark. It offers great performance and, in our experience, easy integration at runtime, especially on JVM-based platforms.",
-            "links": { "H20": "http://docs.0xdata.com/" },
-            "flag": "new"
-        },
-        "JackrabbitOak": {
-            "rank": "35",
-            "name": "Jackrabbit Oak",
-            "description": "Jackrabbit Oak, formerly named Jackrabbit 3, is a scalable and performant implementation of hierarchical content repository for use as the foundation of content management system. In addition to file based storage solution, MongoDB and RDMS storage are also supported, and preferred in large volume use scenarios. Although implemented in Java, it can be easily accessed from various platforms via standards like JCR.",
-            "links": { "Jackrabbit Oak": "http://jackrabbit.apache.org/oak/" }
-        },
-        "LinuxSecurityModules": {
-            "rank": "36",
-            "name": "Linux security modules",
-            "description": "While server hardening is an old technique that is considered fairly commonplace by sysadmins who have had to manage production systems, it has not become commonplace among the developer community. However, the rise in the DevOps culture has resulted in renewed focus on tools like SELinux, AppArmor and Grsecurity that aim to make this simpler, at least on the Linux ecosystem. Each of these tools comes with their own strengths and weaknesses and it is currently hard to pick one as being the only one you will need. That said, we highly recommend that all teams at least assess which <strong>Linux security modules</strong> would be the right one for them and make security and server hardening a part of their development workflow."
-        },
-        "MariaDB": {
-            "rank": "37",
-            "name": "MariaDB",
-            "description": "After Oracle's acquisition of MySQL, more and more close sourced modules are bundled into its enterprise edition. There are concerns over the future of MySQL. MariaDB is a community-developed GPL-only fork of MySQL intended to remain truly open source, yet fully compatible and competitive with MySQL. High-profile adopters include large-scale internet organizations Google and Wikipedia, as well as key Linux distributors RedHat and SUSE.",
-            "links": { "MariaDB": "https://mariadb.org/" }
-        },
-        "Spark": {
-            "rank": "41",
-            "name": "Spark Photon/Spark Electron",
-            "description": "Spark is a full stack solution for cloud connected devices. <strong>Spark Photon</strong> is a microcontroller with wifi module. <strong>Spark Electron</strong> is a variant that connects to a cellular network. Spark OS adds REST API to the devices. This simplifies the entry to IoT and building your own connected devices",
-            "links": { "Spark": "https://www.spark.io/" },
-            "flag": "new"
-        },
-        "Textitasaservice": {
-            "rank": "42",
-            "name": "Text-it-as-a-service / Rapidpro",
-            "description": "Text-it-as-a-service / Rapidpro offers ability to easily set up or modify complex short message service application for business without extensive need of a developer. With the lower costs of text messages compared to USSD sessions, this provides a more affordable way to build scalable applications targeting feature phones and we have seen success in our projects. Flows are very simple to build and actions can be triggered at any point such as sending an sms, email or even calling an external api.",
-            "links": { "Rapidpro": "http://rapidpro.io/" }
-        }
-    },
-    "hold": {
-        "ApplicationServers": {
-            "rank": "45",
-            "name": "Application Servers",
-            "description": "The rise of containers, phoenix servers and continuous delivery has seen a move away from the usual approach to deploying web applications. Traditionally we have built an artifact and then installed that artifact into an application server. The result was long feedback loops for changes, increased build times and the not insignificant overhead of managing these application servers in production. Many of them are a pain to automate too. Most teams we work with favor bundling an embedded http server within your web application. There are plenty of options available: Jetty, SimpleWeb, Webbit and Owin Self-Host amongst others. Easier automation, easier deployment and a reduction in the amount of infrastructure you have to manage lead us to recommend embedded servers over application servers for future projects.",
-            "flag": "new"
-        },
-        "OSGi": {
-            "rank": "46",
-            "description": "OSGi (Open Service Gateway initiative) is a specification that aims to remedy the lack of a module system for Java, allowing for dynamic reloading of components. While some projects (notably Eclipse) use OSGi successfully, other uses have exposed the hazards of adding abstractions to platforms never designed for them. Projects that rely on OSGi to define a component system quickly realize that it solves only a small part of the overall problem, and often adds its own accidental complexity to projects such as more complex builds. Most projects now either use old-fashioned JAR files or microservice architectures to manage components, and await the native solution in Java in the Jigsaw module specification."
-        },
-        "SPDY": {
-            "rank": "47",
-            "description": "The SPDY protocol was developed by Google from 2009 as an experiment to provide an alternative protocol to address performance shortcomings of HTTP/1.1. The new HTTP/2 standard protocol includes many of the key performance features of SPDY, and Google has announced it will drop browser SPDY support in early 2016. If your application requires the features of SPDY, we recommend you look instead at HTTP/2.",
-            "links": { "SPDY": "https://www.chromium.org/spdy/spdy-whitepaper" },
-            "flag": "new"
-        }
+  "adopt": {
+    "spark": {
+      "rank": "25",
+      "name": "Apache Spark",
+      "description": "Apache Spark has been steadily gaining ground as a fast and general engine for large-scale data processing. The engine is written in Scala and is well suited for applications that reuse a working set of data across multiple parallel operations. It�s designed to work as a standalone cluster or as part of Hadoop YARN cluster. It can access data from sources such as HDFS, Cassandra, S3 etc. Spark also offers many higher level operators in order to ease the development of data parallel applications. As a generic data processing platform it has enabled development of many higher level tools such as interactive SQL (Spark SQL), real time streaming (Spark Streaming), machine learning library (MLib), R-on-Spark etc.",
+      "links": { "Apache Spark": "https://spark.apache.org/" }
     }
+  },
+  "trial": {
+    "impala": {
+      "rank": "26",
+      "name": "Cloudera Impala",
+      "description": "For a while now the Hadoop community has been trying to bring low-latency, interactive SQL capability to the Hadoop platform (better known as SQL-on-Hadoop). This has led to a few open source systems such as Cloudera Impala, Apache Drill, Facebook�s Presto etc being developed actively through 2014. We think the SQL-on-Hadoop trend signals an important shift as it changes Hadoop's proposition from being a batch oriented technology that was complementary to databases into something that could compete with them. <a href='http://www.cloudera.com/content/cloudera/en/products-and-services/cdh/impala.html'><strong>Cloudera Impala</strong></a> was one of the first SQL-on-Hadoop platforms. It is a distributed, massively-parallel, C++ based query engine. The core component of this platform is the Impala daemon that coordinates the execution of the SQL query across one or more nodes of the Impala cluster. Impala is designed to read data from files stored on HDFS in all popular file formats. It leverages Hive's metadata catalog, in order to share databases and tables between the two database platforms. Impala comes with a shell as well as JDBC and ODBC drivers for applications to use.",
+      "links": { "Cloudera Impala": "http://www.cloudera.com/content/cloudera/en/products-and-services/cdh/impala.html" },
+      "flag": "new"
+    },
+    "digitalocean": {
+      "rank": "27",
+      "name": "DigitalOcean",
+      "description": "We have been using DigitalOcean for basic compute infrastructure, and the service continues to impress us. If you need developer-friendly cloud infrastructure, it is worth a look",
+      "links": { "DigitalOcean": "http://digitalocean.com" }
+    },
+    "TOTPTwo-FactorAuthentication": {
+      "rank": "28",
+      "name": "TOTP Two-Factor Authentication",
+      "description": "Passwords continue to be a poor mechanism for authenticating users and we�ve recently seen companies such as Yahoo! move to a �no passwords� solution�a one-time code is texted to your phone whenever you need to log in from a new browser. If you are still using passwords we recommend employing two-factor authentication which can significantly improve security. Time-based One-Time Password (TOTP) is the standard algorithm in this space, with free smartphone authenticator apps from Google and Microsoft.",
+      "links": {
+        "Time-based One-Time Password (TOTP)": "http://en.wikipedia.org/wiki/Time-based_One-time_Password_Algorithm",
+        "Google": "https://play.google.com/store/apps/details?id=com.google.android.apps.authenticator2",
+        "Microsoft": "http://www.windowsphone.com/en-us/store/app/authenticator/e7994dbc-2336-4950-91ba-ca22d653759b"
+      }
+    }
+  },
+  "assess": {
+    "kylin": {
+      "rank": "29",
+      "name": "Apache Kylin",
+      "description": "Apache Kylin is an open source analytics solution from eBay Inc. that enables SQL based multidimensional analysis (OLAP) on very large datasets. Kylin is intended to be a Hadoop based hybrid OLAP (HOLAP) solution that will eventually support both MOLAP and ROLAP style multidimensional analysis. With Kylin you can define cubes using a Cube Designer and initiate an offline process that builds these cubes. The offline process performs a pre-join step to join facts and dimension tables into a flattened out structure. This is followed by a pre-aggregation phase where individual cuboids are built using Map Reduce jobs. The results are stored in HDFS sequence files and are later loaded into HBase. The data requests can originate from SQL submitted using a SQL-based tool. The query engine (based on Apache Calcite), determines if the target dataset exists in HBase. If so, the engine directly accesses the target data from HBase and returns the result with sub-second latency. If not, the engine routes the queries to Hive (or any other SQL on Hadoop solution enabled on the cluster).",
+      "links": { "Apache Kylin": "http://www.kylin.io/" },
+      "flag": "new"
+    },
+    "mesos": {
+      "rank": "30",
+      "name": "Apache Mesos",
+      "description": "Mesos is a platform that abstracts out underlying computing resources to make it easier to build massively scalable distributed systems. It can be used to provide a scheduling layer for Docker, or to act as an abstraction layer to things like AWS. Twitter has used it to great effect to help them scale their infrastructure. Tools build on top of Mesos are starting to appear such as Chronos, which is a distributed, fault tolerant cron replacement.",
+      "links": { "Apache Mesos": "http://mesos.apache.org/" }
+    },
+    "CoreCLRandFX": {
+      "rank": "31",
+      "name": "CoreCLR and CoreFX",
+      "description": "CoreCLR and CoreFX is the core platform and framework for .NET. Although not new, they have recently been open sourced by Microsoft. A key change is that these dependencies are bin-deployable, they do not need to be installed on a machine in advance. This eases side-by-side deployments, allowing applications to use different framework versions without conflicts. Something written in .NET is then an implementation detail, you can install a .NET dependency into any environment. A .NET tool is no different than something written in C from an external dependency perspective, making it a much more attractive option for general purpose applications and utilities. CoreFX is also being factored into individual NuGet dependencies, so that applications can pull what they need, keeping the footprint for .NET applications and libraries small and making it easier to replace part of the framework.",
+      "links": {
+        "CoreCLR": "https://github.com/dotnet/corefx",
+        "CoreFX": "https://github.com/dotnet/corefx"
+      },
+      "flag": "new"
+    },
+    "CoreOS": {
+      "rank": "32",
+      "name": "CoreOS",
+      "description": "CoreOS is a Linux distribution designed to run large, scalable systems. All applications deployed on a CoreOS instance are run in separate Docker containers, and CoreOS provides a suite of tools to help manage them, including etcd their own distributed configuration store. Newer services, such as fleet, help cluster management by ensuring that a specific number of service instances are always kept running. FastPatch allows atomic CoreOS upgrades using an active-passive root partition scheme and helps with quick rollback in case of problems. These new developments make CoreOS well worth looking into if you are already comfortable with Docker."
+    },
+    "Deis": {
+      "rank": "33",
+      "name": "Deis",
+      "description": "Heroku, with its 12-factor application model, has changed the way we think about building, deploying, and hosting web applications. Deis encapsulates the Heroku PaaS model in an open-source framework that deploys onto Docker containers hosted anywhere. Deis is still evolving, but for applications that fit the 12-factor model it has the potential to greatly simplify deployment and hosting in the environment of your choice. Deis is yet another example of the rich ecosystem of platforms and tools emerging around Docker.",
+      "links": { "Deis": "http://deis.io/" },
+      "flag": "new"
+    },
+    "H20": {
+      "rank": "34",
+      "name": "H20",
+      "description": "Predictive analytics are used in more and more products, often directly in end-user facing functionality. H2O is an interesting new open source package (with a startup behind it) that makes predictive analytics accessible to project teams due to its easy-to-use user interface. At the same time it integrates with the data scientists� favourite tools, R and Python, as well as Hadoop and Spark. It offers great performance and, in our experience, easy integration at runtime, especially on JVM-based platforms.",
+      "links": { "H20": "http://docs.0xdata.com/" },
+      "flag": "new"
+    },
+    "JackrabbitOak": {
+      "rank": "35",
+      "name": "Jackrabbit Oak",
+      "description": "Jackrabbit Oak, formerly named Jackrabbit 3, is a scalable and performant implementation of hierarchical content repository for use as the foundation of content management system. In addition to file based storage solution, MongoDB and RDMS storage are also supported, and preferred in large volume use scenarios. Although implemented in Java, it can be easily accessed from various platforms via standards like JCR.",
+      "links": { "Jackrabbit Oak": "http://jackrabbit.apache.org/oak/" }
+    },
+    "LinuxSecurityModules": {
+      "rank": "36",
+      "name": "Linux security modules",
+      "description": "While server hardening is an old technique that is considered fairly commonplace by sysadmins who have had to manage production systems, it has not become commonplace among the developer community. However, the rise in the DevOps culture has resulted in renewed focus on tools like SELinux, AppArmor and Grsecurity that aim to make this simpler, at least on the Linux ecosystem. Each of these tools comes with their own strengths and weaknesses and it is currently hard to pick one as being the only one you will need. That said, we highly recommend that all teams at least assess which <strong>Linux security modules</strong> would be the right one for them and make security and server hardening a part of their development workflow."
+    },
+    "MariaDB": {
+      "rank": "37",
+      "name": "MariaDB",
+      "description": "After Oracle's acquisition of MySQL, more and more close sourced modules are bundled into its enterprise edition. There are concerns over the future of MySQL. MariaDB is a community-developed GPL-only fork of MySQL intended to remain truly open source, yet fully compatible and competitive with MySQL. High-profile adopters include large-scale internet organizations Google and Wikipedia, as well as key Linux distributors RedHat and SUSE.",
+      "links": { "MariaDB": "https://mariadb.org/" }
+    },
+    "Spark": {
+      "rank": "41",
+      "name": "Spark Photon/Spark Electron",
+      "description": "Spark is a full stack solution for cloud connected devices. <strong>Spark Photon</strong> is a microcontroller with wifi module. <strong>Spark Electron</strong> is a variant that connects to a cellular network. Spark OS adds REST API to the devices. This simplifies the entry to IoT and building your own connected devices",
+      "links": { "Spark": "https://www.spark.io/" },
+      "flag": "new"
+    },
+    "Textitasaservice": {
+      "rank": "42",
+      "name": "Text-it-as-a-service / Rapidpro",
+      "description": "Text-it-as-a-service / Rapidpro offers ability to easily set up or modify complex short message service application for business without extensive need of a developer. With the lower costs of text messages compared to USSD sessions, this provides a more affordable way to build scalable applications targeting feature phones and we have seen success in our projects. Flows are very simple to build and actions can be triggered at any point such as sending an sms, email or even calling an external api.",
+      "links": { "Rapidpro": "http://rapidpro.io/" }
+    }
+  },
+  "hold": {
+    "ApplicationServers": {
+      "rank": "45",
+      "name": "Application Servers",
+      "description": "The rise of containers, phoenix servers and continuous delivery has seen a move away from the usual approach to deploying web applications. Traditionally we have built an artifact and then installed that artifact into an application server. The result was long feedback loops for changes, increased build times and the not insignificant overhead of managing these application servers in production. Many of them are a pain to automate too. Most teams we work with favor bundling an embedded http server within your web application. There are plenty of options available: Jetty, SimpleWeb, Webbit and Owin Self-Host amongst others. Easier automation, easier deployment and a reduction in the amount of infrastructure you have to manage lead us to recommend embedded servers over application servers for future projects.",
+      "flag": "new"
+    },
+    "OSGi": {
+      "rank": "46",
+      "description": "OSGi (Open Service Gateway initiative) is a specification that aims to remedy the lack of a module system for Java, allowing for dynamic reloading of components. While some projects (notably Eclipse) use OSGi successfully, other uses have exposed the hazards of adding abstractions to platforms never designed for them. Projects that rely on OSGi to define a component system quickly realize that it solves only a small part of the overall problem, and often adds its own accidental complexity to projects such as more complex builds. Most projects now either use old-fashioned JAR files or microservice architectures to manage components, and await the native solution in Java in the Jigsaw module specification."
+    },
+    "SPDY": {
+      "rank": "47",
+      "description": "The SPDY protocol was developed by Google from 2009 as an experiment to provide an alternative protocol to address performance shortcomings of HTTP/1.1. The new HTTP/2 standard protocol includes many of the key performance features of SPDY, and Google has announced it will drop browser SPDY support in early 2016. If your application requires the features of SPDY, we recommend you look instead at HTTP/2.",
+      "links": { "SPDY": "https://www.chromium.org/spdy/spdy-whitepaper" },
+      "flag": "new"
+    }
+  }
 }

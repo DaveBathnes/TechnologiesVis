@@ -1,17 +1,15 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta name="description" content="">
+    <meta name="description" content="A visualisation example using Highcharts">
     <meta name="author" content="Dave Rowe">
-    <link rel="icon" href="favicon.ico">
 
     <title>Technologies visualisation example</title>
 
-    <!-- Bootstrap core CSS -->
     <link href="css/custom.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
@@ -32,13 +30,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Technologies vis.</a>
+                <a class="navbar-brand" href="#">Technologies</a>
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="mailto@dave_roweuk@yahoo.co.uk">Contact</a></li>
+                    <li class="active"><a href="/">Home</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" data-toggle="modal" data-target="#mdlAbout">About</a></li>
                 </ul>
             </div>
         </div>
@@ -47,9 +46,83 @@
     <div class="container">
         <div>
             <h1>Technologies visualisation</h1>
-            <p class="lead">Select the category you are interested in on the Pie chart below.  </p>
+            <p class="lead">Select the category you are interested in on the pie chart below.</p>
         </div>
         <div id="chtTechnologies"></div>
+        <div class="modal fade" id="mdlDetails" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="hdrTechnology"></h4>
+                        <span class="label label-primary" id="lblFlag"></span>
+                    </div>
+                    <div class="modal-body">
+                        <p id="pDescription"></p>
+                        <p class="lead">Links</p>
+                        <div class="list-group" id="lstLinks">
+                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal fade" id="mdlAbout" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">About</h4>
+                    </div>
+                    <div class="modal-body">
+                        <h5>Usage</h5>
+                        <p>The 'top-level' categories (currently hold, adopt, trial, assess) are shown in the initial pie-chart; hovering over each category will reveal the number of technologies.</p>
+                        <p>On clicking a category the pie chart will 'drill down' and reveal the technologies.  The titles will be displayed, with any flag set (e.g. new) also displayed as part of the title.</p>
+                        <p>Further clicking on a technology will bring up a modal dialog with the full details and links.</p>
+                        <p></p>
+                        <h5>Technologies used</h5>
+                        <p>A number of open source and freely licensed technologies have been used to create this page.  Licensing details are given for each technology.</p>
+                        <div class="list-group">
+                            <a class="list-group-item" href="" target="_blank">
+                                <h4 class="list-group-item-heading">Highcharts</h4>
+                                <p class="list-group-item-text">Highcharts is a charting library allowing for a set of charts that are easily templated and dynamically updated.  Highcharts is free for personal and non-profit.  For commercial use it would need a licence per developer.</p>
+                            </a>
+                            <a class="list-group-item" href="#">
+                                <h4 class="list-group-item-heading">Bootstrap</h4>
+                                <p class="list-group-item-text">Bootstrap is used as it is a popular framework to provide modern looking controls, and a responsive grid system.  Bootstrap is released under the MIT license.</p>
+                            </a>
+                            <a class="list-group-item" href="" target="_blank">
+                                <h4 class="list-group-item-heading">jQuery</h4>
+                                <p class="list-group-item-text">jQuery is a pre-requisite of Bootstrap, but is also used in the specific page for code brevity.  jQuery is released under the MIT license.</p>
+                            </a>
+                            <a class="list-group-item" href="" target="_blank">
+                                <h4 class="list-group-item-heading">Bootswatch paper</h4>
+                                <p class="list-group-item-text">Bootswatch provide out of the box CSS files to customise bootstrap defaults.  In this case the 'paper' theme is being used, influenced by Google's material design.  Bootswatch themes are released under the MIT license.</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="list-unstyled">
+                        <li class="pull-right"><a href="#top">Back to top</a></li>
+                    </ul>
+                    <p>
+                        Made by Dave Rowe.
+                    </p>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <script src="js/jquery-1.11.3.min.js"></script>
